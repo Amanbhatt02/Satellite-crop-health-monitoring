@@ -18,7 +18,7 @@ The Sentinel-2 workflow included:
 
 1. Filtering imagery to the Alathur study area.
 2. Filtering by acquisition date.
-3. Applying an SCL-based cloud and scene classification mask.
+3. Applying an SCL-based scene classification mask to retain suitable pixels.
 4. Calculating NDVI.
 5. Calculating NDWI.
 6. Creating a quality mosaic using maximum NDVI.
