@@ -15,9 +15,9 @@ Map.addLayer(
 );
 
 
-// --------------------------------------------------
+
 // SENTINEL-1 DATA
-// --------------------------------------------------
+
 
 var s1 = ee.ImageCollection('COPERNICUS/S1_GRD')
   .filterBounds(paddyFields)
@@ -29,9 +29,9 @@ print('Sentinel-1 collection:', s1);
 print('Total images:', s1.size());
 
 
-// --------------------------------------------------
+
 // SPECKLE FILTERING
-// --------------------------------------------------
+
 
 var s1_filtered = s1.map(function(image) {
 
@@ -51,18 +51,18 @@ var s1_filtered = s1.map(function(image) {
 print('Speckle filtered collection:', s1_filtered);
 
 
-// --------------------------------------------------
+
 // ASSIGN FIELD IDs
-// --------------------------------------------------
+
 
 var paddyFields = paddyFields.map(function(feature) {
   return feature.set('field_id', feature.id());
 });
 
 
-// --------------------------------------------------
+
 // FIELD-LEVEL VH TIME SERIES
-// --------------------------------------------------
+
 
 var vh_timeseries = s1_filtered.map(function(image) {
 
@@ -87,9 +87,9 @@ var vh_timeseries = s1_filtered.map(function(image) {
 print('VH Time Series Table', vh_timeseries);
 
 
-// --------------------------------------------------
+
 // VH TIME SERIES CHART
-// --------------------------------------------------
+
 
 var chart = ui.Chart.feature.groups({
   features: vh_timeseries,
@@ -116,9 +116,9 @@ var chart = ui.Chart.feature.groups({
 print(chart);
 
 
-// --------------------------------------------------
+
 // LATEST SENTINEL-1 OBSERVATION
-// --------------------------------------------------
+
 
 var latestImage = s1_filtered
   .sort('system:time_start', false)
@@ -130,9 +130,9 @@ print(
 );
 
 
-// --------------------------------------------------
+
 // CURRENT CROP STAGE
-// --------------------------------------------------
+
 
 var currentFields = latestImage.select('VH').reduceRegions({
   collection: paddyFields,
@@ -171,9 +171,9 @@ print(
 );
 
 
-// --------------------------------------------------
+
 // SEASONAL BASELINE
-// --------------------------------------------------
+
 
 var latestDate = ee.Date(
   latestImage.get('system:time_start')
@@ -230,9 +230,9 @@ print(
 );
 
 
-// --------------------------------------------------
+
 // HEALTH CLASSIFICATION
-// --------------------------------------------------
+
 
 var healthFields = classifiedFields.map(function(feature) {
 
@@ -282,9 +282,9 @@ var healthFields = classifiedFields.map(function(feature) {
 });
 
 
-// --------------------------------------------------
+
 // CROP HEALTH MAP
-// --------------------------------------------------
+
 
 var styledFields = healthFields.map(function(feature) {
 
@@ -323,9 +323,9 @@ Map.addLayer(
 );
 
 
-// --------------------------------------------------
+
 // ADD FIELD COORDINATES AND EXPORT
-// --------------------------------------------------
+
 
 var exportFields = healthFields.map(function(feature) {
 
