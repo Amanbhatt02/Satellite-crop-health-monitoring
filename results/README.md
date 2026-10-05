@@ -1,50 +1,69 @@
 # Results
 
-This folder contains selected outputs from the crop-health monitoring work.
+This folder contains selected results and visual outputs from the Alathur paddy crop monitoring project.
 
-## Alathur Paddy Field Analysis
+## Study Area
 
-The Alathur analysis combined Sentinel-2 optical imagery and Sentinel-1 SAR observations to study paddy crop condition through the growing season.
+![Alathur Study Area](01_alathur_study_area.png)
 
-### Study Area
+## Sentinel-2 Vegetation Analysis
 
-![Alathur study area](01_alathur_study_area.png)
+### NDVI Time Series
 
-### NDVI Analysis
+![NDVI Time Series](02_ndvi_time_series.png)
 
-![NDVI time series](02_ndvi_time_series.png)
+### Peak NDVI Quality Mosaic
 
-![Peak NDVI mosaic](03_peak_ndvi_mosaic.png)
+![Peak NDVI Quality Mosaic](03_peak_ndvi_mosaic.png)
 
-### NDWI Analysis
+### NDWI Time Series
 
-![NDWI time series](04_ndwi_time_series.png)
+![NDWI Time Series](04_ndwi_time_series.png)
 
-![Peak NDWI mosaic](05_peak_ndwi_mosaic.png)
+### Peak NDWI Quality Mosaic
 
-### Vegetation Health Classification
+![Peak NDWI Quality Mosaic](05_peak_ndwi_mosaic.png)
 
-![NDVI classification](06_ndvi_classification.png)
+## Vegetation Health Classification
 
-![Vegetation health distribution](07_health_distribution.png)
+The peak vegetation condition was classified using NDVI thresholds:
 
-The final NDVI-based classification reported approximately **85% Healthy Vegetation**, **15% Moderate Vegetation**, and **0% Low Vegetation**.
+- Low Vegetation: NDVI < 0.35
+- Moderate Vegetation: 0.35 ≤ NDVI < 0.45
+- Healthy Vegetation: NDVI ≥ 0.45
 
-### Sentinel-1 SAR Analysis
+![NDVI Classification](06_ndvi_classification.png)
 
-![Sentinel-1 SAR time series](08_sentinel1_sar_timeseries.png)
+### Vegetation Health Distribution
 
-The SAR time series was used to complement optical observations during periods affected by cloud cover and to examine patterns associated with flooding and crop development.
+The classified output showed approximately:
 
-## Multi-Field Monitoring
+- Low Vegetation: 0%
+- Moderate Vegetation: 15%
+- Healthy Vegetation: 85%
 
-The monitoring system extends the analysis to **10 paddy fields** using field-level Sentinel-1 VH observations.
+![Vegetation Health Distribution](07_health_distribution.png)
 
-It produces:
+## Sentinel-1 SAR Analysis
 
-- VH time series
-- Current crop-stage classification
-- Seasonal baseline VH
-- Change from seasonal baseline
-- Field-level health status
-- Interactive crop-health visualization
+Sentinel-1 SAR data was used to monitor the field during periods when optical observations were affected by cloud cover.
+
+![Sentinel-1 SAR Time Series](08_sentinel1_sar_timeseries.png)
+
+## Multi-Field Crop Monitoring Dashboard
+
+A field-level monitoring system was developed for 10 paddy fields using Sentinel-1 SAR observations.
+
+The dashboard includes field-level time series, crop-stage classification, seasonal baseline comparison, and crop-health assessment.
+
+### Dashboard Overview
+
+![Dashboard Overview](09_dashboard_overview.png)
+
+### Field Monitoring
+
+![Field Monitoring](10_field_monitoring.png)
+
+### Field Details
+
+![Field Details](11_field_details.png)
