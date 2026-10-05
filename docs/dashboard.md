@@ -65,3 +65,11 @@ The dashboard provides:
 - Health classification
 - Search and filtering
 - Automated data updates
+
+## Live Deployment
+
+The dashboard was deployed as a web application and made accessible through a public deployment.
+
+The application provides an interactive interface for viewing the monitored paddy fields, their current health status, crop stage, and Sentinel-1 observations.
+
+**Dashboard:** https://paddy-dashboard.onrender.com
