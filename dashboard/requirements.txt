@@ -1,0 +1,4 @@
+Flask
+earthengine-api
+apscheduler
+setuptools
