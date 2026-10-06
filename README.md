@@ -43,3 +43,9 @@ satellite-crop-health-monitoring/
 │   └── dashboard.md
 └── results/
     └── README.md
+
+## Live Dashboard
+
+The project includes a Flask-based web dashboard for visualizing field-level crop health and Sentinel-1 observations.
+
+**Live dashboard:** https://paddy-dashboard.onrender.com
