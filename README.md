@@ -49,3 +49,23 @@ satellite-crop-health-monitoring/
 The project includes a Flask-based web dashboard for visualizing field-level crop health and Sentinel-1 observations.
 
 **Live dashboard:** https://paddy-dashboard.onrender.com
+
+## Results
+
+### Alathur Crop Analysis
+
+![Study Area](results/01_alathur_study_area.png)
+
+![NDVI Time Series](results/02_ndvi_time_series.png)
+
+![NDVI Classification](results/06_ndvi_classification.png)
+
+![Health Distribution](results/07_health_distribution.png)
+
+### Multi-Field Monitoring Dashboard
+
+![Dashboard Overview](results/09_dashboard_overview.png)
+
+![Field Monitoring](results/10_field_monitoring.png)
+
+![Field Details](results/11_field_details.png)
