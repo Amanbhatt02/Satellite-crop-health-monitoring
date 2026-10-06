@@ -8,7 +8,7 @@ The system monitors 10 paddy fields using Sentinel-1 SAR observations and conver
 
 1. Load the 10 paddy field polygons in Google Earth Engine.
 2. Retrieve Sentinel-1 SAR imagery.
-3. Apply spatial median filtering to reduce speckle noise.
+3. Generate spatially median-filtered VV and VH bands to reduce speckle noise.
 4. Extract field-level VH backscatter values for each observation.
 5. Build a temporal VH time series for every field.
 6. Determine the latest crop stage from current VH values.
