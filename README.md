@@ -24,3 +24,22 @@ The project was developed as part of an internship focused on applying remote se
 - JavaScript
 - Leaflet
 - Geospatial and temporal analysis
+
+## Project Structure
+
+```text
+satellite-crop-health-monitoring/
+├── gee/
+│   ├── alathur_analysis.js
+│   └── multi_field_monitoring.js
+├── dashboard/
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── Procfile
+│   └── templates/
+│       └── index.html
+├── docs/
+│   ├── alathur_analysis.md
+│   └── dashboard.md
+└── results/
+    └── README.md
