@@ -327,41 +327,7 @@ def recalculate_health():
     except Exception as e:
         print("Recalculation error:", e)
 
-def refresh_data():
-    global geojson, latest_date
 
-    print("Checking for new Sentinel-1 data...")
-
-    try:
-        latest_s1 = (
-            ee.ImageCollection("COPERNICUS/S1_GRD")
-            .filterBounds(fields_ee.geometry())
-            .filter(ee.Filter.eq("instrumentMode", "IW"))
-            .filter(ee.Filter.listContains("transmitterReceiverPolarisation", "VH"))
-            .sort("system:time_start", False)
-            .first()
-        )
-
-        latest_timestamp = latest_s1.get("system:time_start").getInfo()
-        new_date = datetime.fromtimestamp(latest_timestamp / 1000).strftime("%d %b %Y")
-
-        if new_date != latest_date:
-            print("New data found for:", new_date, "— refreshing...")
-            latest_date = new_date
-
-            geojson = geemap.ee_to_geojson(fields_ee)
-
-            for i, feature in enumerate(geojson["features"], start=1):
-                feature["properties"]["field_name"] = f"Field {i}"
-                feature["properties"]["field_id"]   = i
-
-            print("Data refreshed successfully!")
-
-        else:
-            print("No new data yet. Latest is still:", latest_date)
-
-    except Exception as e:
-        print("Auto-refresh error:", e)
 
 
 if __name__ == "__main__":
