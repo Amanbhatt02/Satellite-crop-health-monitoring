@@ -73,3 +73,10 @@ The dashboard was deployed as a web application and made accessible through a pu
 The application provides an interactive interface for viewing the monitored paddy fields, their current health status, crop stage, and Sentinel-1 observations.
 
 **Dashboard:** https://paddy-dashboard.onrender.com
+
+## Limitations
+
+- Crop-stage and health thresholds are rule-based and are intended for monitoring and decision support rather than formal agronomic diagnosis.
+- Health assessment depends on comparison with historical Sentinel-1 observations from the same seasonal period.
+- A fallback baseline is used when sufficient historical observations are unavailable.
+- The field boundary asset used in Google Earth Engine is not included in this repository.
