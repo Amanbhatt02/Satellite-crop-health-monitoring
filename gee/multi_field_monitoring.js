@@ -190,7 +190,7 @@ print('Day of year', doy);
 var startYear = ee.Number(latestYear).subtract(3);
 var endYear = ee.Number(latestYear).subtract(1);
 
-var historical = s1.filter(
+var historical = s1_filtered.filter(
   ee.Filter.calendarRange(
     startYear,
     endYear,
