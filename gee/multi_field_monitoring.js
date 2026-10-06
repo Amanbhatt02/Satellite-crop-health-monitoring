@@ -66,7 +66,7 @@ var paddyFields = paddyFields.map(function(feature) {
 
 var vh_timeseries = s1_filtered.map(function(image) {
 
-  var stats = image.select('VH').reduceRegions({
+  var stats = image.select('VH_filtered').reduceRegions({
     collection: paddyFields,
     reducer: ee.Reducer.mean(),
     scale: 10
@@ -134,7 +134,7 @@ print(
 // CURRENT CROP STAGE
 
 
-var currentFields = latestImage.select('VH').reduceRegions({
+var currentFields = latestImage.select('VH_filtered').reduceRegions({
   collection: paddyFields,
   reducer: ee.Reducer.mean(),
   scale: 10
@@ -216,7 +216,7 @@ print(
 
 // Seasonal median VH per field
 var baselineSeasonal = seasonalCollection
-  .select('VH')
+  .select('VH_filtered')
   .median()
   .reduceRegions({
     collection: paddyFields,
