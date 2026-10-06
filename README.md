@@ -69,3 +69,12 @@ The project includes a Flask-based web dashboard for visualizing field-level cro
 ![Field Monitoring](results/10_field_monitoring.png)
 
 ![Field Details](results/11_field_details.png)
+
+## What I Worked On
+
+- Developed Google Earth Engine workflows for Sentinel-1 and Sentinel-2 satellite analysis.
+- Analyzed NDVI, NDWI, and Sentinel-1 VH backscatter for agricultural monitoring.
+- Built field-level temporal analysis for 10 paddy fields.
+- Implemented seasonal baseline comparison and rule-based crop health classification.
+- Developed a Flask dashboard to visualize field-level monitoring results.
+- Integrated geospatial visualization using Leaflet and interactive charts.
