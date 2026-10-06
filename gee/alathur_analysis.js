@@ -10,9 +10,9 @@ Map.centerObject(geometry, 16);
 Map.addLayer(geometry, {color: 'white'}, 'Study Area (Alathur)');
 
 
-// --------------------------------------------------
+
 // SENTINEL-2: CLOUD MASKING AND SPECTRAL INDICES
-// --------------------------------------------------
+
 
 function maskS2clouds(image) {
   var scl = image.select('SCL');
@@ -36,9 +36,9 @@ var s2_collection = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
 print('Total raw images:', s2_collection.size());
 
 
-// --------------------------------------------------
+
 // PEAK VEGETATION HEALTH
-// --------------------------------------------------
+
 
 var peak_health_image = s2_collection
   .qualityMosaic('NDVI')
@@ -68,9 +68,9 @@ Map.addLayer(
 );
 
 
-// --------------------------------------------------
+
 // NDVI / NDWI TIME SERIES
-// --------------------------------------------------
+
 
 var index_ts = s2_collection.map(function(img) {
 
@@ -126,9 +126,9 @@ var ndwiChart = ui.Chart.feature.byFeature({
 print(ndwiChart);
 
 
-// --------------------------------------------------
+
 // NDVI HEALTH CLASSIFICATION
-// --------------------------------------------------
+
 
 var ndvi_class = ndvi_peak.expression(
   "(NDVI < 0.35) ? 1" +
@@ -146,9 +146,9 @@ Map.addLayer(
 );
 
 
-// --------------------------------------------------
+
 // AREA DISTRIBUTION
-// --------------------------------------------------
+
 
 var areaImage = ee.Image.pixelArea().addBands(ndvi_class);
 
@@ -231,9 +231,9 @@ var pieChart = ui.Chart.feature.byFeature({
 print(pieChart);
 
 
-// --------------------------------------------------
+
 // SENTINEL-1 SAR TIME SERIES
-// --------------------------------------------------
+
 
 var s1_collection = ee.ImageCollection('COPERNICUS/S1_GRD')
   .filterBounds(geometry)
@@ -266,9 +266,9 @@ print(
 );
 
 
-// --------------------------------------------------
+
 // SENTINEL-1 VV TIME SERIES
-// --------------------------------------------------
+
 
 var s1_ts = s1_collection.map(function(img) {
 
